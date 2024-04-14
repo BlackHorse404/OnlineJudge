@@ -4,13 +4,15 @@ pipeline{
         stage('Install Dependencies') {
             steps {
                 // Install any dependencies your Python test needs, like pip install <package>
-                sh 'pip3 install -r OnlineJudge_BE/deploy/requirements.txt'
+                sh 'cd OnlineJudge_BE'
+                sh 'pip3 install -r deploy/requirements.txt'
             }
         }
         stage('Run Tests') {
             steps {
                 // Run your Python test script
-                sh 'python3.8 /OnlineJudge_BE/manage.py test oj'
+                sh 'cd OnlineJudge_BE'
+                sh 'python3.8 manage.py test oj'
             }
         }
     }
