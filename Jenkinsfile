@@ -5,7 +5,8 @@ pipeline{
             steps {
                 // Install any dependencies your Python test needs, like pip install <package>
                 sh 'cd OnlineJudge_BE'
-                sh 'pip3 install -r deploy/requirements.txt'
+                sh 'pip --version'
+                sh 'pip install -r deploy/requirements.txt'
             }
         }
         stage('Run Tests') {
