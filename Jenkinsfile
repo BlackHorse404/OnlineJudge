@@ -15,9 +15,6 @@ pipeline{
         }
     }
     post {
-        always {
-            // Clean up any resources if needed
-        }
         success {
             // Actions to take if the test succeeds
             echo 'Tests passed successfully!'
