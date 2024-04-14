@@ -10,7 +10,7 @@ pipeline{
         stage('Run Tests') {
             steps {
                 // Run your Python test script
-                sh 'python /OnlineJudge_BE/manage.py test oj'
+                sh 'python3.8 /OnlineJudge_BE/manage.py test oj'
             }
         }
     }
