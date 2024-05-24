@@ -1,18 +1,25 @@
 pipeline{
     agent any
     stages {
-        stage('Install Dependencies') {
+        stage('Install Enviroment And Dependency') {
             steps {
                 // Install any dependencies your Python test needs, like pip install <package>
-                sh 'pip3 --version'
-                sh 'pip3 install -r OnlineJudge_BE/deploy/requirements.txt'
+                // sh 'pip3 --version'
+                // sh 'pip3 install -r OnlineJudge_BE/deploy/requirements.txt'
+                sh 'cd OnlineJudge_FE && docker build -t OJ-FE .'
             }
         }
         stage('Run Tests') {
             steps {
                 // Run your Python test script
-                sh 'cd '
-                sh 'python3.8 OnlineJudge_BE/manage.py test oj'
+                // sh 'cd '
+                // sh 'python3.8 OnlineJudge_BE/manage.py test oj'
+            }
+        },
+        stage('Run FE') {
+            steps {
+                // Run your Python test script
+                sh 'cd OnlineJudge_FE && docker container run -p 5173:5173 OJ-FE'
             }
         }
     }
