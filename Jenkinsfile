@@ -15,7 +15,7 @@ pipeline{
                 // sh 'cd '
                 // sh 'python3.8 OnlineJudge_BE/manage.py test oj'
             }
-        },
+        }
         stage('Run FE') {
             steps {
                 // Run your Python test script
