@@ -9,13 +9,13 @@ pipeline{
                 sh 'cd OnlineJudge_FE && docker build -t OJ-FE .'
             }
         }
-        stage('Run Tests') {
-            steps {
-                // Run your Python test script
-                // sh 'cd '
-                // sh 'python3.8 OnlineJudge_BE/manage.py test oj'
-            }
-        }
+        // stage('Run Tests') {
+        //     steps {
+        //         // Run your Python test script
+        //         // sh 'cd '
+        //         // sh 'python3.8 OnlineJudge_BE/manage.py test oj'
+        //     }
+        // }
         stage('Run FE') {
             steps {
                 // Run your Python test script
