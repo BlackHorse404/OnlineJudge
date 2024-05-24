@@ -8,7 +8,7 @@ pipeline{
                 // sh 'pip3 install -r OnlineJudge_BE/deploy/requirements.txt'
                 sh 'cd OnlineJudge_FE'
                 sh 'ls'
-                sh 'docker build -t OJ-FE .'
+                sh 'docker build -t oj_fe .'
             }
         }
         // stage('Run Tests') {
@@ -21,9 +21,9 @@ pipeline{
         stage('Run FE') {
             steps {
                 // Run your Python test script
-                sh 'sudo'
-                sh '123456'
-                sh 'cd OnlineJudge_FE && su docker container run -p 5173:5173 OJ-FE'
+                sh 'cd OnlineJudge_FE'
+                sh 'docker images'
+                sh 'docker container run -p 5173:5173 oj_fe'
             }
         }
     }
