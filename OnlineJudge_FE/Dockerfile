@@ -1,7 +1,6 @@
 FROM node:8.12.0
-WORKDIR /  
-COPY . .
+WORKDIR /app
+COPY package*.json /app/
 RUN npm install  
-EXPOSE 5173  
-CMD npm run build
-CMD npm run dev
+COPY ./ /app/
+RUN npm run build
