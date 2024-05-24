@@ -1,6 +1,15 @@
 pipeline{
-    agent any
+    agent none
     stages {
+        stage("Fix the permission issue") {
+
+            agent any
+
+            steps {
+                sh "sudo chown root:jenkins /run/docker.sock"
+            }
+
+        }
         stage('Install Enviroment And Dependency') {
             steps {
                 // Install any dependencies your Python test needs, like pip install <package>
