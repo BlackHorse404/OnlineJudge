@@ -8,7 +8,7 @@ pipeline{
                 // sh 'pip3 install -r OnlineJudge_BE/deploy/requirements.txt'
                 sh 'cd OnlineJudge_FE'
                 sh 'ls'
-                sh 'docker build -t oj_fe .'
+                sh 'pwd && docker build -t oj_fe .'
             }
         }
         // stage('Run Tests') {
