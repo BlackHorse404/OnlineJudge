@@ -4,4 +4,4 @@ COPY package*.json /app
 copy . /app
 RUN npm install  
 RUN pwd
-RUN npm run build
+CMD npm run build
