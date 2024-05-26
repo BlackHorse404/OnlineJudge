@@ -22,8 +22,9 @@ pipeline{
             steps {
                 // Run your Python test script
                 sh 'cd OnlineJudge_FE'
+                sh 'ls'
                 sh 'docker images'
-                sh 'cd OnlineJudge_FE && docker container run -p 8899:5173 oj_fe'
+                sh 'cd OnlineJudge_FE && ls && docker container run -p 8899:5173 oj_fe'
             }
         }
     }
